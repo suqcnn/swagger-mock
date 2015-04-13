@@ -10,6 +10,10 @@ Runs an HTTP server which mocks all requests specified in a Swagger 2.0 definiti
 
     $ java -jar swagger-mock.jar <swagger-yaml-file>
 
+Now visit the server (by default on port 8181) under `/ui/` to get a Swagger UI:
+
+[http://localhost:8181/ui/](http://localhost:8181/ui/)
+
 The server will use the lowest non-default response code of your response definition (mostly 200) and look for the
 example in your object schema definition. The server assumes that responses are application/json; if it discovers a
 string in the example, it will parse the string as json, else it will take the given data structure as the response.

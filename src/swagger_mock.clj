@@ -59,7 +59,8 @@
         (s1st/swagger-validator)
         (s1st/swagger-parser)
         (s1st/swagger-discovery)
-        (s1st/swagger-mapper ::s1st/direct definition)
+        (s1st/swagger-mapper ::s1st/direct definition
+                             :cors-origin "*")
         (wrap-params))))
 
 (defn -main
