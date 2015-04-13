@@ -1,0 +1,21 @@
+#!/bin/sh
+
+if [ -z "$1" ]; then
+	echo "Usage:  $0 <swagger-yaml-file> [port]" >&2
+	exit 1
+fi
+
+file=$1
+
+port=$2
+[ -z "$port" ] && port=8181
+
+cd $(dirname $file)
+dir=$(pwd)
+file=$(basename $file)
+
+echo "Serving $dir/$file on port ${port}..."
+echo
+echo "You can get the Swagger UI under  http://localhost:$port/ui/"
+echo
+exec docker run -it --rm -p $port:8181 -v $dir:/swagger zalando/swagger-mock $file

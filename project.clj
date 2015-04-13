@@ -1,4 +1,4 @@
-(defproject swagger-mock "0.1.0-SNAPSHOT"
+(defproject swagger-mock "latest"
             :description "Runs an HTTP server based on a swagger definition and returns mocked responses."
             :url "https://github.com/zalando/swagger-mock"
 
@@ -20,4 +20,20 @@
 
             :main ^:skip-aot swagger-mock
             :uberjar-name "swagger-mock.jar"
-            :profiles {:uberjar {:aot :all}})
+            :profiles {:uberjar {:aot :all}}
+
+            :plugins [[io.sarnowski/lein-docker "1.1.0"]]
+
+            :docker {:image-name "zalando/swagger-mock"}
+
+            :release-tasks [["vcs" "assert-committed"]
+                            ["change" "version" "leiningen.release/bump-version" "release"]
+                            ["vcs" "commit"]
+                            ["vcs" "tag"]
+                            ["clean"]
+                            ["uberjar"]
+                            ["docker" "build"]
+                            ["docker" "push"]
+                            ["change" "version" "leiningen.release/bump-version"]
+                            ["vcs" "commit"]
+                            ["vcs" "push"]])

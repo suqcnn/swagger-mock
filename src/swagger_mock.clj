@@ -66,5 +66,6 @@
 (defn -main
   "Usage:  java -jar swagger-mock.jar myapp.yaml"
   [definition-file & args]
-  (let [handler (setup-handler definition-file)]
-    (jetty/run-jetty handler (merge {:port 8181} env))))
+  (let [handler (setup-handler definition-file)
+        config (merge {:port 8181} env)]
+    (jetty/run-jetty handler config)))
