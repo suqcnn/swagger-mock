@@ -27,13 +27,7 @@
             :docker {:image-name "zalando/swagger-mock"}
 
             :release-tasks [["vcs" "assert-committed"]
-                            ["change" "version" "leiningen.release/bump-version" "release"]
-                            ["vcs" "commit"]
-                            ["vcs" "tag"]
                             ["clean"]
                             ["uberjar"]
                             ["docker" "build"]
-                            ["docker" "push"]
-                            ["change" "version" "leiningen.release/bump-version"]
-                            ["vcs" "commit"]
-                            ["vcs" "push"]])
+                            ["docker" "push"]])
