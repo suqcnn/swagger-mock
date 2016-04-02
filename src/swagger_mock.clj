@@ -4,8 +4,7 @@
             [ring.adapter.jetty :as jetty]
             [environ.core :refer [env]]
             [ring.util.response :refer :all]
-            [clojure.tools.logging :as log]
-            [clojure.data.json :as json])
+            [clojure.tools.logging :as log])
   (:gen-class))
 
 (defn extract-example

@@ -7,8 +7,8 @@
 
   :min-lein-version "2.0.0"
 
-  :dependencies [[org.clojure/clojure "1.7.0"]
-                 [io.sarnowski/swagger1st "0.15.0"]
+  :dependencies [[org.clojure/clojure "1.8.0"]
+                 [io.sarnowski/swagger1st "0.21.0"]
                  [ring "1.4.0"]
                  [environ "1.0.0"]
                  [org.apache.logging.log4j/log4j-api "2.3"]
