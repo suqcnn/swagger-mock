@@ -30,9 +30,9 @@
                    (extract-example)
                    (response)
                    (content-type "application/json")
-                   (status stat))
+                   (status (Integer. stat)))
                (-> (response nil)
-                   (status stat)))]
+                   (status (Integer. stat))))]
     (log/infof "%s %s -> %s" (-> request :request-method name .toUpperCase) (:uri request) (:status resp))
     resp))
 
