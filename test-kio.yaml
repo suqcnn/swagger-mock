@@ -51,7 +51,7 @@ paths:
           format: date-time
           required: false
       responses:
-        200:
+        '200':
           description: List of all applications
           schema:
             type: array
